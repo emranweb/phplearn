@@ -14,6 +14,10 @@
     body {
         font-family: 'Kalpurush', Arial, sans-serif !important;
     }
+
+    select {
+        height: 300px;
+    }
     </style>
 </head>
 
@@ -29,6 +33,7 @@
                 <?php
                 $fname = '';
                 $lname = '';
+                $flowers = ["rose", "lily", "beli", "sunflower", "marigold"]
                 ?>
 
                 <?php 
@@ -42,7 +47,7 @@
                  }
 
                  function isChecked ($array, $value){
-                    if(in_array($value, $array)){
+                    if(isset($array) && is_array($array) && in_array($value, $array)){
                      echo "checked";
                     }
                  }
@@ -87,13 +92,26 @@
                             Pineapple
                         </label>
                     </div>
+
+                    <div class="form-group">
+                        <label for="">Slect Flowers</label>
+                        <select class="form-control" name="sflowers[]" multiple>
+                            <option value="" disabled selected>Select Flowers</option>
+                            <?php 
+                               foreach($flowers as $flower){
+                                   printf("<option value='%s'>%s</option> \n", strtolower($flower), ucwords($flower) );
+                               }
+                            ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""></label>
+                        <input type="file" class="form-control-file" name="photo">
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+
                 </form>
-
-
-
-
-
 
             </div>
         </div>
