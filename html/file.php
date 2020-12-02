@@ -16,22 +16,23 @@
 
     <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <input type="file" class="form-control-file" name="photo" id="" placeholder="" aria-describedby="fileHelpId">
+            <input type="file" class="form-control-file" name="photo" id="" placeholder=""
+                aria-describedby="fileHelpId">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 
     <p>
-        <pre>
+    <pre>
             <?php
-              if($_FILES['photo']){
-                  move_uploaded_file($_FILES['photo']["tmp_name"], "file/".$_FILES['photo']['name']);
+              if($_FILES && isset($_FILES["photo"])){
+                  move_uploaded_file($_FILES['photo']["tmp_name"], "files/".$_FILES['photo']['name']);
               }
             ?>
         </pre>
     </p>
 
-    
+
 </body>
 
 </html>
