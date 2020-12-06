@@ -1,1 +1,1 @@
-hello
+[{"fname":"emran","age":30},{"fname":"sabit","age":30}]
