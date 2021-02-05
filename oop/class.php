@@ -1,47 +1,34 @@
 <?php
-
-class Person {
-    public $name;
-    public $age;
-    protected $brother;
-
-    public static function welcom (){
-        return "hello world";
-    }
-
-    public function getName (){
-        return self::welcom();
-    }
-
-    function __construct($name, $age, $brother){
-     $this->name = $name;
-     $this->age = $age;
-     $this->brother  = $brother;
-    }
- 
-}
+class First {
+    //property
+    public $name = "emran";
 
 
-$person1 = new Person("emran", 30,"sabbir");
-echo $person1->getName();
-
-
-class Shop extends Person {
-    public $id;
-
-    public function __construct($name, $age, $brother, $id){
-        parent:: __construct($name, $age,$brother);
-        $this->id = $id;
+    //methodes
+    public function name (){
+        echo $this->  name;
     }
 }
 
-$shop1 = new Shop("erman", 30, "sabbir", 0220202);
 
 
 
+class Foo {
 
+    static private $name = "afdhefi";
 
- echo $person1->name;
+    private static function nameValue (){
+        echo self::$name;
+    }
+
+    public function check(){
+        echo self::nameValue();
+    }
+}
+
+$foo = new Foo;
+
+print $foo->check();
 
 
 
